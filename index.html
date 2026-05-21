@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head><link crossorigin="" href="https://www.gstatic.com" rel="preconnect"/><link href="https://cdnjs.cloudflare.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com" rel="preconnect"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Programmers Academy - كورس البرمجة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/index.css" rel="stylesheet"/>
+<link href="assets/css/uiux.css" rel="stylesheet"/>
+<link href="assets/css/v20.css" rel="stylesheet"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="#0057C8" name="theme-color"/>
+<link href="assets/css/growth-ui.css" rel="stylesheet"/>
+<script defer="" src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script defer="" src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+<script defer="" src="assets/js/platform.js"></script><script defer="" src="assets/js/utils.js"></script><script defer="" src="assets/js/error-handling.js"></script><script defer="" src="assets/js/security.js"></script><script defer="" src="assets/js/analytics.js"></script><script defer="" src="assets/js/offline.js"></script><script defer="" src="assets/js/ux-polish.js"></script><script defer="" src="assets/js/index-extra-1-258bcd17.js"></script>
+<link href="assets/css/smart-management.css" rel="stylesheet"/>
+<link href="assets/css/signup.css" rel="stylesheet"/>
+<link href="assets/css/course-landing.css" rel="stylesheet"/>
+<link href="assets/img/favicon.ico" rel="icon"/><link href="assets/img/icon-180.png" rel="apple-touch-icon"/><link href="assets/css/design-system.css" rel="stylesheet"/></head>
+<body data-page="index">
+<section class="hero"><div class="wrap"><div class="grid"><div>
+<h1>كورس أساسيات البرمجة بـ Python</h1>
+<p class="lead">منصة تعليم برمجة للمبتدئين: فيديوهات، تمارين، كويزات، مشاريع، شهادة، ومتابعة ولي الأمر من مكان واحد.</p>
+<div class="actions"><a class="btn primary" href="#course-signup"><i class="fas fa-paper-plane"></i> احجز مكانك</a><a class="btn ghost" href="#course-plan"><i class="fas fa-map"></i> شوف المنهج</a></div>
+<div class="tenant-box" style="margin-top:16px"><input id="tenant" placeholder="كود الأكاديمية للدخول"/><button class="btn primary" onclick="go('student')">دخول الطالب</button><button class="btn ghost" onclick="go('parent')">ولي الأمر</button><button class="btn ghost" onclick="go('admin')">دخول الإدارة</button></div>
+<div class="titan-signup-box active" data-course-signup="1" id="index-signup-box" style="background:rgba(255,255,255,.95);color:#0f172a;border-color:rgba(255,255,255,.5);">
+<h3 id="course-signup"><i class="fas fa-user-plus"></i> طلب انضمام لكورس البرمجة</h3>
+<input id="index-signup-name" placeholder="اسم الطالب بالكامل" type="text"/>
+<input id="index-signup-code" placeholder="كود الطالب المطلوب" type="text"/>
+<select id="index-signup-level"><option value="1">مستوى 1</option><option value="2">مستوى 2</option><option value="3">مستوى 3</option></select>
+<input id="index-signup-phone" placeholder="رقم الهاتف - 6 أرقام أو أكثر" type="tel"/>
+<textarea id="index-signup-note" placeholder="ملاحظة اختيارية: اسم ولي الأمر، السن، أو أفضل وقت للتواصل"></textarea>
+<button class="btn primary" onclick="sendIndexAccountRequest()" style="border:0;background:#2563eb;color:#fff;width:100%;justify-content:center;"><i class="fas fa-paper-plane"></i> إرسال طلب الانضمام</button>
+<span class="titan-signup-note">بعد موافقة الإدارة ستدخل من بوابة الطالب أو ولي الأمر بالكود ورقم الهاتف.</span>
+<div class="titan-signup-status" id="index-signup-status"></div>
+</div>
+<div class="actions"><a class="btn ghost" href="admin.html" onclick="this.href='admin.html?tenant='+encodeURIComponent(currentTenant())"><i class="fas fa-shield-halved"></i> لوحة الإدارة</a></div>
+</div><div class="card"><div class="features">
+<div class="feature"><i class="fas fa-code"></i><h3>تعلم عملي</h3><p>Python من الصفر مع تمارين بعد كل درس ومحرر أكواد للطالب.</p></div>
+<div class="feature"><i class="fas fa-diagram-project"></i><h3>مشاريع حقيقية</h3><p>مشروع صغير كل أسبوعين ومشروع نهائي على GitHub.</p></div>
+<div class="feature"><i class="fas fa-chart-line"></i><h3>متابعة تقدم</h3><p>درجات، حضور، واجبات، تنبيهات، وتقرير واضح لولي الأمر.</p></div>
+<div class="feature"><i class="fas fa-certificate"></i><h3>شهادة وإنجاز</h3><p>شهادة إتمام مع ملف إنجاز يعرض مشاريع الطالب.</p></div>
+</div></div></div></div></section>
+<section class="course-section" id="course-plan">
+<div class="course-wrap">
+<div class="course-title"><h2>الطالب هيطلع بإيه؟</h2><p>الكورس مبني على 10 وحدات، كل وحدة لها شرح، تمرين، واجب، كويز، وتطبيق عملي.</p></div>
+<div class="course-grid">
+<div class="course-card"><h3><i class="fas fa-terminal"></i> أساسيات Python</h3><p>متغيرات، شروط، loops، lists، dictionaries، functions، debugging.</p></div>
+<div class="course-card"><h3><i class="fas fa-code-branch"></i> أدوات المبرمج</h3><p>Git و GitHub، تنظيم الملفات، قراءة الأخطاء، وتسليم المشاريع.</p></div>
+<div class="course-card"><h3><i class="fas fa-database"></i> بيانات و APIs</h3><p>JSON، ملفات، APIs، ومقدمة SQL بطريقة مناسبة للمبتدئين.</p></div>
+<div class="course-card"><h3><i class="fas fa-award"></i> مشروع نهائي</h3><p>كل طالب يبني مشروع بسيط قابل للعرض في ملف إنجازه.</p></div>
+</div>
+</div>
+</section>
+<section class="course-section alt">
+<div class="course-wrap">
+<div class="course-title"><h2>خطة 10 أسابيع</h2><p>خطة واضحة تساعدك تبيع الكورس وتديره بدون ارتجال.</p></div>
+<div class="course-timeline">
+<div class="course-week"><b>الأسبوع 1</b><span>إعداد البيئة + أول برنامج + فهم طريقة تفكير الكمبيوتر.</span></div>
+<div class="course-week"><b>الأسبوع 2</b><span>المتغيرات، أنواع البيانات، input/output، وتمرين آلة حاسبة بسيطة.</span></div>
+<div class="course-week"><b>الأسبوع 3</b><span>الشروط واللوبات + لعبة تخمين الرقم.</span></div>
+<div class="course-week"><b>الأسبوع 4</b><span>Lists و Dictionaries + مشروع إدارة مهام صغير.</span></div>
+<div class="course-week"><b>الأسبوع 5</b><span>Functions و Modules + تنظيم الكود.</span></div>
+<div class="course-week"><b>الأسبوع 6</b><span>Debugging و Testing و Clean Code.</span></div>
+<div class="course-week"><b>الأسبوع 7</b><span>مبادئ OOP بطريقة مبسطة.</span></div>
+<div class="course-week"><b>الأسبوع 8</b><span>Files و JSON و APIs ومقدمة Web.</span></div>
+<div class="course-week"><b>الأسبوع 9</b><span>SQL Basics + مشروع بيانات بسيط.</span></div>
+<div class="course-week"><b>الأسبوع 10</b><span>Git/GitHub + تسليم المشروع النهائي + شهادة.</span></div>
+</div>
+</div>
+</section>
+<section class="course-section">
+<div class="course-wrap">
+<div class="course-title"><h2>باقات مقترحة</h2><p>عدّل الأسعار حسب السوق، لكن خلي العرض واضح من البداية.</p></div>
+<div class="course-grid">
+<div class="course-card"><h3>تجربة مجانية</h3><div class="course-price">حصة تعريفية</div><ul><li>تعريف بالمنصة</li><li>تمرين بسيط</li><li>تقييم مستوى الطالب</li></ul></div>
+<div class="course-card"><h3>جروب أساسيات</h3><div class="course-price">8–10 أسابيع</div><ul><li>حصة أسبوعية</li><li>واجب وكويز</li><li>مشاريع صغيرة</li><li>تقرير لولي الأمر</li></ul></div>
+<div class="course-card"><h3>متابعة خاصة</h3><div class="course-price">1:1 أو مجموعة صغيرة</div><ul><li>خطة شخصية</li><li>مراجعة كود</li><li>دعم خاص</li><li>مشروع نهائي محسن</li></ul></div>
+</div>
+<div class="course-note">نصيحة تشغيل: لا تبدأ بكل المميزات مرة واحدة. ابدأ بفوج صغير، 10–15 طالب، وراجع النتائج قبل التوسع.</div>
+</div>
+</section>
+<script defer="" src="assets/js/index.js"></script>
+<script defer="" src="assets/js/uiux.js"></script>
+<script defer="" src="assets/js/network-status.js"></script>
+<script defer="" src="assets/js/index-extra-5-3170b3ed.js"></script>
+<script defer="" src="assets/js/index-signup.js"></script>
+</body></html>

@@ -1,0 +1,7 @@
+.titan-signup-box{display:none;margin-top:14px;padding:14px;border:1px solid rgba(37,99,235,.22);border-radius:18px;background:rgba(37,99,235,.06);text-align:right;line-height:1.8}
+.titan-signup-box.active{display:block}
+.titan-signup-box h3{margin:0 0 10px;color:var(--primary,#2563eb);font-weight:900;font-size:1.05rem}
+.titan-signup-box input,.titan-signup-box select,.titan-signup-box textarea{width:100%;margin:6px 0 9px;padding:12px 13px;border-radius:14px;border:1px solid var(--border,#e2e8f0);background:var(--bg-body,#f8fafc);color:var(--text-main,#0f172a);font-family:inherit}
+.titan-signup-box textarea{min-height:76px;resize:vertical}
+.titan-signup-box .titan-signup-note{display:block;margin-top:8px;color:var(--text-dim,#64748b);font-size:.86rem;font-weight:700}
+.titan-signup-box .titan-signup-status{margin-top:8px;font-size:.9rem;font-weight:900;color:var(--primary,#2563eb)}
